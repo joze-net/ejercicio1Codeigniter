@@ -1,19 +1,35 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Vista1</title>
-</head>
+
+
 <body>
-	<p>mvc con codeigniter</p>
-	<p>mi nombre es: <?php echo $nombre ?></p>
-	<p>
-		<ul>mi lista:
-			<?php foreach( $lista as $ls){ ?>
-			 <li><?php echo $ls ?></li>
-		<?php }  ?>
-	    </ul>
-	</p>
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+         
+           
+            <h3 class="post-subtitle">
+              esta es la vista #1
+            </h3>
+          
+<?php foreach($res->result() as $fila){ ?><!--tener en cuente que result() es una funcion de codeigniter-->
+          <p class="post-meta"><?php echo $fila->descripcion ?>
+            <a href="#">Start Bootstrap</a>
+            en <?php echo $fila->fecha ?></p>
+
+          <?php }?>
+         
+        </div>
+       
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
 </body>
-</html>
