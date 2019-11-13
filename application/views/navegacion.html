@@ -22,10 +22,18 @@
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contacto</a>
           </li>
+
+        <?php if($this->session->userdata('inicio'))  {?>
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost/pruebaCodeigniter/controladorlogin/cerrarSesion"><?php echo $this->session->userdata('usuario'); ?> Cerrar sesion</a>
+          </li>
+
+          <?php  }else{ ?>
+
           <li class='dropdown'>
-                      <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">INICIAR SESION ... <strong class='caret'></strong></a>
+                      <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">Iniciar sesion ... <strong class='caret'></strong></a>
                       <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
-                        <form action='<?php base_url()?>controladorlogin' method='post' accept-charset='UTF-8' role="form">
+                        <form action='http://localhost/pruebaCodeigniter/controladorlogin' method='post' accept-charset='UTF-8' role="form">
                           <div class='form-group'>
                             <input class='form-control large' style='text-align: center;' type='text' name='user' placeholder='usuario'/>
                           </div>
@@ -38,6 +46,8 @@
                           </form>
                       </div>
                     </li>
+
+          <?php }?>
         </ul>
       </div>
     </div>

@@ -7,6 +7,8 @@ class Modelologin extends CI_Model{
        foreach($user->result() as $usu){
        	if($usu->usunombre==$usuario && $usu->contraseña==$contraseña){
        		return $user;
+       	}else{
+       		return null;
        	}
        }
        

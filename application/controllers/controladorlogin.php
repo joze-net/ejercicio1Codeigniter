@@ -17,13 +17,21 @@ public function index(){
 		'usuario' => $usuario,
 		'contraseña' => $contraseña,
 		'inicio' => true
-	);
+	    );
+	    $this->session->set_userdata($data);//almacenams lpos datos en una session
+header("location:".base_url());//
     }else{
-    	$data=null;
+    	header("location:".base_url());//si usuariodb es null es por que no se obtuvieron datos de el usuer digititado, asi q //redirexionamos al inicio
     }
-	$this->session->set_userdata($data);//almacenams lpos datos en una session
+	
 
-	echo $this->session->userdata('usuario');//asi los mostramos
+	//echo $this->session->userdata('usuario');//asi los mostramos
+}
+
+
+function cerrarSesion(){
+	$this->session->sess_destroy();
+	header('location: '. base_url());
 }
 
 }
