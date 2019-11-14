@@ -20,6 +20,21 @@ class articulos extends CI_Controller{
         
 	}
 
+
+public function nuevo(){
+
+
+	
+		$this->load->view('head.html');
+		$this->load->view('navegacion.html');
+		$this->load->view('header.html');
+       
+        
+		$this->load->view('postnuevo.html');
+		$this->load->view('footer.html');
+		
+        
+	}
 }
 
  ?>
