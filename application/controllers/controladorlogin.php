@@ -20,8 +20,11 @@ public function index(){
 	    );
 	    $this->session->set_userdata($data);//almacenams lpos datos en una session
 header("location:".base_url());//
+echo 'invalidonnn1';
     }else{
+    	echo 'invalido1';
     	header("location:".base_url());//si usuariodb es null es por que no se obtuvieron datos de el usuer digititado, asi q //redirexionamos al inicio
+    	
     }
 	
 
@@ -32,6 +35,14 @@ header("location:".base_url());//
 function cerrarSesion(){
 	$this->session->sess_destroy();
 	header('location: '. base_url());
+}
+
+function registrarse(){
+
+	$nuevousuario=$this->input->post('nuevouser');//de esta forma almacenamos los datos del login
+	$nuevacontraseña=$this->input->post('nuevopassword');
+	$this->load->model('modelologin');
+	$this->modelologin->registro($nuevousuario,$nuevacontraseña);
 }
 
 }

@@ -19,12 +19,28 @@
           <li class="nav-item">
             <a class="nav-link" href="post.html">Sample Post</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contacto</a>
-          </li>
+           <li class='dropdown'>
+                      <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">Registrarse ... <strong class='caret'></strong></a>
+                      <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
+                        <form action='http://localhost/pruebaCodeigniter/controladorlogin/registrarse' method='post' accept-charset='UTF-8' role="form">
+                          <div class='form-group'>
+                            <input class='form-control large' style='text-align: center;' type='text' name='nuevouser' placeholder='usuario'/>
+                          </div>
+                          <div class='form-group'>
+                            <input class='form-control large' style='text-align: center;' type='password' name='nuevopassword' placeholder='contraseña' />
+                          </div>
+                          <div class='form-group'>
+                            <button class='btn btn-primary' style='width: 380px;' type='submit'>Aceptar</button>
+                          </div>
+                          </form>
+                      </div>
+                    </li>
 
         <?php if($this->session->userdata('inicio'))  {?>
-        <li class="nav-item">
+         <li class="nav-item">
+            <a class="nav-link" href="http://localhost/pruebaCodeigniter/perfil">Perfil</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost/pruebaCodeigniter/controladorlogin/cerrarSesion"><?php echo $this->session->userdata('usuario'); ?> Cerrar sesion</a>
           </li>
 
@@ -46,11 +62,9 @@
                           </form>
                       </div>
                     </li>
-
+          
           <?php }?>
-          <li class="nav-item">
-            <a class="nav-link" href="http://localhost/pruebaCodeigniter/perfil">Pefil</a>
-          </li>
+         
         </ul>
       </div>
     </div>

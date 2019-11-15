@@ -35,6 +35,25 @@ public function nuevo(){
 		
         
 	}
+
+
+	public function guardarpost(){
+	   
+
+	   $nuevopost=$this->input->post('nuevopost');//guardamos el post escrito desde el form de postnuevo
+	   
+
+	   $sql= " insert into post (descripcion,fecha) values ('$nuevopost',now())";
+	   $this->db->query($sql);//almacenamos en la bd
+
+	   header('location: '. base_url().'articulos/mostrar');
+
+
+
+
 }
+}
+
+
 
  ?>
