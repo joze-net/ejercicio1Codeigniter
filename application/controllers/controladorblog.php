@@ -3,8 +3,8 @@
 class controladorblog extends CI_Controller{
 	public function index(){
 		
-		$GLOBALS['creado'] = "nada";
-		if(isset($_GET['creado'])){
+		$GLOBALS['creado'] = "nnnn";//almacenamos creadoe en una variable superglobal y poder accerder a ella desde otro archivo
+		if(isset($_GET['creado'])){//con isset sabremos si la variablle a sido creada
 			$GLOBALS['creado'] = $_GET['creado'];
 		}
 

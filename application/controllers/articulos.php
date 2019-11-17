@@ -52,6 +52,16 @@ public function nuevo(){
 
 
 }
+
+
+	function eliminarpost(){
+		$idpost=$_GET['idpost'];
+		if($this->session->userdata('inicio')){
+		    $sql='delete from post where id='.$idpost.';';
+       		$this->db->query($sql);//aqui estamos consultando en la base de datos
+       		header('location: '. base_url().'articulos/mostrar');
+		}
+}  
 }
 
 

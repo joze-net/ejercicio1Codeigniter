@@ -2,6 +2,9 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
+          <h3 style="color: red"><?php  if($GLOBALS['creado']=='false'){
+
+          echo 'Confirmaciòn de contraseña incorrecta, vuelve a intentarlo'; }else if($GLOBALS['creado']=='true'){echo 'Usuario creado';};  ?></h3>
           <a href="<?php base_url()?>articulos/mostrar">
             <h2 class="post-title">
               Quieres ver contenido relevante que se dea tu interes, explora nuestro contenido

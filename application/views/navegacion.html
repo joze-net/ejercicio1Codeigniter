@@ -20,7 +20,7 @@
             <a class="nav-link" href="post.html">Sample Post</a>
           </li>
         
-         <?php echo 'var= '.$GLOBALS['creado']; if($this->session->userdata('inicio'))  {?>
+         <?php if($this->session->userdata('inicio'))  {?>
          <li class="nav-item">
             <a class="nav-link" href="http://localhost/pruebaCodeigniter/perfil">Perfil</a>
           </li>
@@ -44,7 +44,7 @@
                             <input class='form-control large' style='text-align: center;' type='password' name='nuevopassword' placeholder='contraseña' />
                           </div>
                           <div class='form-group'>
-                            <input class='form-control large' style='text-align: center;' type='password' name='nuevopassword' placeholder='confirmar contraseña' />
+                            <input class='form-control large' style='text-align: center;' type='password' name='confirmarpassword' placeholder='confirmar contraseña' />
                           </div>
                           <div class='form-group'>
                             <button class='btn btn-primary' style='width: 380px;' type='submit'>Aceptar</button>

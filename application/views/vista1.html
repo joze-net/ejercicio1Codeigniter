@@ -16,9 +16,13 @@
       foreach($res->result() as $fila){ ?><!--tener en cuente que result() es una funcion de codeigniter-->
           <p class="post-meta"><?php echo $fila->descripcion ?>
             
-            en <?php echo $fila->fecha ?></p>
+            en <?php echo $fila->fecha ?>
+              
+               <a href="http://localhost/pruebaCodeigniter/articulos/eliminarpost?idpost=<?php echo $fila->id?>" style="float: right;" >eliminar</a>
+            </p>
 
           <?php }}else{?>
+
             <h3 class="post-subtitle">
               este contenido es solo para usuarios
             </h3>  

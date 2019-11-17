@@ -43,16 +43,16 @@ function registrarse(){
 
 	$nuevousuario=$this->input->post('nuevouser');//de esta forma almacenamos los datos del login
 	$nuevacontraseña=$this->input->post('nuevopassword');
-	$confirmarcontraseña=$this->input->post('nuevopassword');
-$GLOBALS['creado']='true';
+	$confirmarcontraseña=$this->input->post('confirmarpassword');
+    $GLOBALS['creado']='';
 
 	if ($nuevacontraseña==$confirmarcontraseña && $nuevacontraseña!="") {
 		$this->load->model('modelologin');
 	    $this->modelologin->registro($nuevousuario,$nuevacontraseña);
-	    ;
-	    header('location: '.base_url()."?creado='true'" );
+	    
+	    header('location: '.base_url()."?creado=true" );
 	}else{
-		$GLOBALS['creado']='false';
+		
 		header('location: '.base_url() ."?creado=false");
 	}
 

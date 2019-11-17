@@ -9,6 +9,7 @@ class Modelologin extends CI_Model{
 
        	if($usu->usunombre==$usuario && $usu->contraseña==$contraseña){
        		$validado=true;
+          break;//para salir del foreach, cuando encuntre un reultado
        	}else{
        		$validado=false;
        	}
