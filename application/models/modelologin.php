@@ -14,7 +14,7 @@ class Modelologin extends CI_Model{
        	}
        }
 
-       if (validado) {
+       if ($validado) {
          return $user;
        }else{
         return null;

@@ -19,24 +19,8 @@
           <li class="nav-item">
             <a class="nav-link" href="post.html">Sample Post</a>
           </li>
-           <li class='dropdown'>
-                      <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">Registrarse ... <strong class='caret'></strong></a>
-                      <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
-                        <form action='http://localhost/pruebaCodeigniter/controladorlogin/registrarse' method='post' accept-charset='UTF-8' role="form">
-                          <div class='form-group'>
-                            <input class='form-control large' style='text-align: center;' type='text' name='nuevouser' placeholder='usuario'/>
-                          </div>
-                          <div class='form-group'>
-                            <input class='form-control large' style='text-align: center;' type='password' name='nuevopassword' placeholder='contraseña' />
-                          </div>
-                          <div class='form-group'>
-                            <button class='btn btn-primary' style='width: 380px;' type='submit'>Aceptar</button>
-                          </div>
-                          </form>
-                      </div>
-                    </li>
-
-        <?php if($this->session->userdata('inicio'))  {?>
+        
+         <?php echo 'var= '.$GLOBALS['creado']; if($this->session->userdata('inicio'))  {?>
          <li class="nav-item">
             <a class="nav-link" href="http://localhost/pruebaCodeigniter/perfil">Perfil</a>
           </li>
@@ -46,7 +30,33 @@
 
           <?php  }else{ ?>
 
-          <li class='dropdown'>
+                  
+
+
+                      <li class="nav-item">
+                      <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">Registrarse ... <strong class='caret'></strong></a>
+                      <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
+                        <form action='http://localhost/pruebaCodeigniter/controladorlogin/registrarse' method='post' accept-charset='UTF-8' role="form">
+                          <div class='form-group'>
+                            <input class='form-control large' style='text-align: center;'autofocus type='text' name='nuevouser'autofocus placeholder='usuario' />
+                          </div>
+                          <div class='form-group'>
+                            <input class='form-control large' style='text-align: center;' type='password' name='nuevopassword' placeholder='contraseña' />
+                          </div>
+                          <div class='form-group'>
+                            <input class='form-control large' style='text-align: center;' type='password' name='nuevopassword' placeholder='confirmar contraseña' />
+                          </div>
+                          <div class='form-group'>
+                            <button class='btn btn-primary' style='width: 380px;' type='submit'>Aceptar</button>
+                          </div>
+                          </form>
+                      </div>
+                    </li>
+
+
+
+          <li class="nav-item">
+         
                       <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">Iniciar sesion ... <strong class='caret'></strong></a>
                       <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
                         <form action='http://localhost/pruebaCodeigniter/controladorlogin' method='post' accept-charset='UTF-8' role="form">
@@ -62,6 +72,7 @@
                           </form>
                       </div>
                     </li>
+
           
           <?php }?>
          

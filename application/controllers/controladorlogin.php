@@ -19,10 +19,10 @@ public function index(){
 		'inicio' => true
 	    );
 	    $this->session->set_userdata($data);//almacenams lpos datos en una session
-header("location:".base_url());//
-echo 'invalidonnn1';
+		header("location:".base_url());//
+
     }else{
-    	echo 'invalido1';
+    	
     	header("location:".base_url());//si usuariodb es null es por que no se obtuvieron datos de el usuer digititado, asi q //redirexionamos al inicio
     	
     }
@@ -37,12 +37,26 @@ function cerrarSesion(){
 	header('location: '. base_url());
 }
 
+
+
 function registrarse(){
 
 	$nuevousuario=$this->input->post('nuevouser');//de esta forma almacenamos los datos del login
 	$nuevacontraseña=$this->input->post('nuevopassword');
-	$this->load->model('modelologin');
-	$this->modelologin->registro($nuevousuario,$nuevacontraseña);
+	$confirmarcontraseña=$this->input->post('nuevopassword');
+$GLOBALS['creado']='true';
+
+	if ($nuevacontraseña==$confirmarcontraseña && $nuevacontraseña!="") {
+		$this->load->model('modelologin');
+	    $this->modelologin->registro($nuevousuario,$nuevacontraseña);
+	    ;
+	    header('location: '.base_url()."?creado='true'" );
+	}else{
+		$GLOBALS['creado']='false';
+		header('location: '.base_url() ."?creado=false");
+	}
+
+	
 }
 
 }
