@@ -10,7 +10,7 @@
          
            
             
-          
+   <!-- $res esta almacenada en la variable $data en la funcion de mostrar contenida en articulos,donde consulta a la db   -->       
 <?php if($res != null){
 
       foreach($res->result() as $fila){ ?><!--tener en cuente que result() es una funcion de codeigniter-->
@@ -18,7 +18,8 @@
             
             en <?php echo $fila->fecha ?>
               
-               <a href="http://localhost/pruebaCodeigniter/articulos/eliminarpost?idpost=<?php echo $fila->id?>" style="float: right;" >eliminar</a>
+               <a href="http://localhost/pruebaCodeigniter/articulos/eliminarpost?idpost=<?php echo $fila->id?>" style="float: right; margin-left: 4px" >eliminar</a>
+                <a href="http://localhost/pruebaCodeigniter/articulos/actualizarpost?idpost=<?php echo $fila->id?>" style="float: right;" >actualizar</a>
             </p>
 
           <?php }}else{?>

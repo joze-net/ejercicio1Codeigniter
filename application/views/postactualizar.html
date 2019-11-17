@@ -1,0 +1,31 @@
+<body>
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+       
+        <!-- Pager -->
+        <div class="clearfix">
+                  
+         
+
+           <form action="http://localhost/pruebaCodeigniter/articulos/guardarpost" method="post">
+              <label for="postactualizar" >nuevo post</label>
+                <div class='form-group'>
+                  <input class='form-control large' style='text-align: center;'autofocus type='text' name='postactualizar'autofocus value="<?php if($res != null){ foreach($res->result() as $fila){ echo $fila->descripcion;}}?>"
+                   id="nuevopost" /> <!-- aqui ponemos la descripcion de la base de datos como valor del txt -->
+                </div>
+             <input class="btn btn-primary float-right" type="submit" name="" value="ActualizarPost">
+           </form>
+
+         
+
+       </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+</body>
