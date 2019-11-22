@@ -24,12 +24,12 @@ class Manejoimagenes extends CI_Controller
 
 		 	$data['uploadError']=$this->upload->display_errors();
 		 	echo $this->upload->display_errors();
-		 	echo "string";
+		 	
 		 	return;
 		 }
 
 		 $data['uploadSuccess']=$this->upload->data();
-		 var_dump($this->upload->data());//si es exotoso
+		 var_dump($this->upload->data('file_name'));//si es exotoso
 		
 	}
 }

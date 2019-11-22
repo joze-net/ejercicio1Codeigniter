@@ -10,12 +10,27 @@ public function index(){
 	
 	$this->load->model('Modelologin');//se debe cargar primeramente el modelo de esta forma
     $usuariodb=$this->Modelologin->getusuario($usuario,$contraseña);//en una variable guardamos los resultados de la base de datos con el //metodo getusuario
+
+
+
      
+     if($usuariodb!=null){
+
+		    foreach ($usuariodb->result() as $key ) {
+		    	$id=$key->usuid;
+		    	$usuariodb=$key->usunombre;
+		    	$contrasenadb=$key->contraseña;
+		    }
+        }   
+
+
+
     if($usuariodb!=null){//si esta variable es diferente de null quiere decir que se obtuvo un usuario de la base de datos
     	//por lo tanto almacenamos dentro de data los valores correspondientes al usuario logeado
         $data = array(
-		'usuario' => $usuario,
-		'contraseña' => $contraseña,
+        'id'=>	$id,
+		'usuario' => $usuariodb,
+		'contraseña' => $contrasenadb,
 		'inicio' => true
 	    );
 	    $this->session->set_userdata($data);//almacenams lpos datos en una session
