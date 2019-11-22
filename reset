@@ -1,0 +1,77 @@
+[33mcommit 451d5d5852273e351afae0956917896b19f0e9da[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Sat Nov 16 22:53:41 2019 -0500
+
+    se agrego btn para actualizar un post, al momemnto carga la descripcion en el txt
+
+[33mcommit f0777163f2d82be2518164a4a3e4baf455f615bc[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Sat Nov 16 21:18:36 2019 -0500
+
+    se agrego btn para eliminar post
+
+[33mcommit 8962d7c5f41cfde700bd2309c9779f45b7b224a7[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Sat Nov 16 19:05:01 2019 -0500
+
+    se detallo la opcion de registro de users, falta detallar var creado de usuario
+
+[33mcommit bd665cd46fd3e1fd798400bd25cb4dd490ecc5b7[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Thu Nov 14 20:31:40 2019 -0500
+
+    ya se puede ingresar nuevos post y usuarios, falta detallar
+
+[33mcommit 4fe7760073e9c2f6da335f60f723228fa45ad975[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Wed Nov 13 20:54:00 2019 -0500
+
+    nueva funcion de agreagr post, falta terminar
+
+[33mcommit ae9146a862a2e54854adb4d60e76239106204d83[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Tue Nov 12 20:57:14 2019 -0500
+
+    quedo funcionando el inicio y cierre de session
+
+[33mcommit f64ddbf938c613e30a421ee1f0433d6135fc40b8[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Sat Nov 9 12:44:10 2019 -0500
+
+    funciona los elementos de session
+
+[33mcommit 8ef55f75d54860d4839994c6f1c73b361f51988f[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Tue Nov 5 20:19:48 2019 -0500
+
+    empezando a crear la session
+
+[33mcommit 13589c161d8d6862242f450b9c64147d57621560[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Tue Oct 29 17:15:06 2019 -0500
+
+    el modelo se agrego en la carpeta autoload para poder usarlo globalmente, sin llamarlo directamente
+
+[33mcommit 09137fcae08552638efa179cc697233f63f32b7a[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Tue Oct 29 17:04:14 2019 -0500
+
+    se agrego una clase modelo que consulta a la base de datos
+
+[33mcommit a1d507f64cc98661957e13cd1d0d258c385702da[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Sat Oct 26 22:12:44 2019 -0500
+
+    al momento se utlizo una plantilla bootstrap y se hizo conexion a base de datos
+
+[33mcommit cd68e461fe51f9fdf2ce520555eede8d052a8c9e[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Fri Oct 25 22:55:47 2019 -0500
+
+    se creo enlace a estilos css
+
+[33mcommit 82cbce9834db8307d3ae6bd433a0b83b0db55c65[m
+Author: joze-net <50345325+joze-net@users.noreply.github.com>
+Date:   Fri Oct 25 22:07:04 2019 -0500
+
+    se quito index.php de la url y se inicio el proyecto

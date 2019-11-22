@@ -24,7 +24,7 @@ class articulos extends CI_Controller{
 public function nuevo(){
 
 
-	
+		
 		$this->load->view('head.html');
 		$this->load->view('navegacion.html');
 		$this->load->view('header.html');
@@ -65,7 +65,7 @@ public function nuevo(){
 }
 
 
-	function actualizarpost(){
+	function cargarpost(){
 		$this->load->view('head.html');
 		$this->load->view('navegacion.html');
 		$this->load->view('header.html');
@@ -78,8 +78,33 @@ public function nuevo(){
 		
 		$this->load->view('postactualizar.html',$data);
 		$this->load->view('footer.html');
-	}  
+	} 
+
+
+	function actualizarpost(){
+
+		//$descripcion=$_POST['postactualizar'];
+		//echo $descripcion;
+		
+		
+
+	if($this->session->userdata('inicio')){
+		$idpost=$_GET['id'];
+        $descripcion=$this->input->post('postactualizar');
+		echo $descripcion;
+		$sql="update post set descripcion='".$descripcion."' where id=".$idpost.";";
+       $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
+ 	   header('location: '.base_url().'articulos/mostrar');
+	}
+ 	  
+
+
+	}
+	
 }
+
+
+
 
 
 
