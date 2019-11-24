@@ -11,7 +11,7 @@ class Manejoimagenes extends CI_Controller
 
 		 $imagen='upload';
 		 $config['upload_path']="upload/";//carpeta donde se gurdara las imgenes
-		 $config['file_name']="nombre_archivo";//esto es opcional
+		// $config['file_name']="nombre_archivo";//esto es opcional
 		 $config['allowed_types']="jpg|png";//los datos permitidos
 		 $config['maxsize']='5000';//kb
 		 $config['max_width']='2000';
@@ -29,7 +29,10 @@ class Manejoimagenes extends CI_Controller
 		 }
 
 		 $data['uploadSuccess']=$this->upload->data();
-		 var_dump($this->upload->data('file_name'));//si es exotoso
+		 var_dump($this->upload->data('file_name'));//si es exotoso, esta funcion muetra el contenido de un var
+
+		 $this->load->model('modeloImagen');
+		 $this->modeloImagen->subirImagen($this->upload->data('file_name'));
 		
 	}
 }

@@ -17,9 +17,13 @@ public function index(){
      if($usuariodb!=null){
 
 		    foreach ($usuariodb->result() as $key ) {
+
+		    	if($key->usunombre==$usuario && $key->contraseña==$contraseña){
 		    	$id=$key->usuid;
 		    	$usuariodb=$key->usunombre;
 		    	$contrasenadb=$key->contraseña;
+		    	break;
+		    }
 		    }
         }   
 

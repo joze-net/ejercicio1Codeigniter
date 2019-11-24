@@ -44,7 +44,7 @@ public function nuevo(){
 	   $nuevopost=$this->input->post('nuevopost');//guardamos el post escrito desde el form de postnuevo
 	   
 
-	   $sql= " insert into post (descripcion,fecha) values ('$nuevopost',now())";
+	   $sql= " insert into post (descripcion,fecha,imagen,postUsuId) values ('$nuevopost',now(),'sin imagen',".$this->session->userdata('id').")";
 	   $this->db->query($sql);//almacenamos en la bd
 
 	   header('location: '. base_url().'articulos/mostrar');
