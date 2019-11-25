@@ -14,7 +14,7 @@ public function index(){
 
 
      
-     if($usuariodb!=null){
+     if($usuariodb!=null){//aqui almacenamos los datros que estan en la tabla usuario
 
 		    foreach ($usuariodb->result() as $key ) {
 
@@ -22,10 +22,28 @@ public function index(){
 		    	$id=$key->usuid;
 		    	$usuariodb=$key->usunombre;
 		    	$contrasenadb=$key->contraseña;
+		    	
 		    	break;
 		    }
 		    }
-        }   
+        }
+
+    $imagenUsuario=$this->Modelologin->getImagen($id);  
+
+     if($imagenUsuario!=null){
+
+		    foreach ($imagenUsuario->result() as $key ) {
+
+		    	$imagen=$key->imagen;;
+		    	
+		    	
+		    	break;
+		    }
+		    
+        } else{
+        	$imagen='es nulo';
+        }
+
 
 
 
@@ -35,6 +53,7 @@ public function index(){
         'id'=>	$id,
 		'usuario' => $usuariodb,
 		'contraseña' => $contrasenadb,
+		'imagen' => $imagen,
 		'inicio' => true
 	    );
 	    $this->session->set_userdata($data);//almacenams lpos datos en una session

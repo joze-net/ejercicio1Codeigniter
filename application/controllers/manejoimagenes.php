@@ -32,7 +32,7 @@ class Manejoimagenes extends CI_Controller
 		 var_dump($this->upload->data('file_name'));//si es exotoso, esta funcion muetra el contenido de un var
 
 		 $this->load->model('modeloImagen');
-		 $this->modeloImagen->subirImagen($this->upload->data('file_name'));
+		 $this->modeloImagen->subirImagen($this->upload->data('file_name'));//pasamos por parametro el nombre de la img
 		
 	}
 }

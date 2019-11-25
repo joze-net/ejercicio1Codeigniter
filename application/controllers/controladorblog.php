@@ -7,8 +7,8 @@ class controladorblog extends CI_Controller{
 		if(isset($_GET['creado'])){//con isset sabremos si la variablle a sido creada
 			$GLOBALS['creado'] = $_GET['creado'];
 		}
-
-
+    // header('location: http://localhost/pruebaCodeigniter/articulos/mostrar');
+    
 		$this->load->view('head.html');
 		$this->load->view('navegacion.html');
 		$this->load->view('header.html');
@@ -17,7 +17,9 @@ class controladorblog extends CI_Controller{
         
 		$this->load->view('contenido.html');
 		$this->load->view('footer.html');
-		
+	
+
+
 	}
 }
 

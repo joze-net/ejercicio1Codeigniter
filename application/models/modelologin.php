@@ -28,6 +28,15 @@ class Modelologin extends CI_Model{
       $registroUsuario=$this->db->query($sql);
    }
 
+   public function getImagen($idusuario){
+
+    
+      $sql='select imagen from post where postUsuId='.$idusuario;
+      $img= $this->db->query($sql);
+      return $img;
+    
+   }
+
 }
 
  ?>

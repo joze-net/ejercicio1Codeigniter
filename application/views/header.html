@@ -1,4 +1,24 @@
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+<?php if($this->session->userdata('inicio')){ ?>
+
+<header class="masthead" style="background-image: url('../upload/<?php echo $this->session->userdata('imagen')?>')">
+
+  <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Mi blog</h1>
+            <span class="subheading">En esta pagina se encontraran contenidos interesantes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+<?php  } else{ ?>
+<header class="masthead" style="background-image: url('../upload/imagen_de_ingles.jpg')">
+
+  <?php } ?>
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
