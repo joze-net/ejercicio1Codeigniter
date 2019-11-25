@@ -1,6 +1,7 @@
 <?php if($this->session->userdata('inicio')){ ?>
 
-<header class="masthead" style="background-image: url('../upload/<?php echo $this->session->userdata('imagen')?>')">
+<!--<header class="masthead" style="background-image: url('upload/<?php echo $this->session->userdata('imagen')?>');  " >-->
+ <header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/upload/<?php echo $this->session->userdata('imagen')?>');  " >
 
   <div class="overlay"></div>
     <div class="container">
@@ -16,9 +17,9 @@
   </header>
   
 <?php  } else{ ?>
-<header class="masthead" style="background-image: url('../upload/imagen_de_ingles.jpg')">
+<header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/upload/imagen_de_ingles.jpg')">
 
-  <?php } ?>
+
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -31,3 +32,5 @@
       </div>
     </div>
   </header>
+
+  <?php } ?>
