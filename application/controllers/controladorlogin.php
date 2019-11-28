@@ -28,7 +28,7 @@ public function index(){
 		    }
         }
 
-    $imagenUsuario=$this->Modelologin->getImagen($id);  
+    $imagenUsuario=$this->Modelologin->getImagen($id);  //el id es para identificar el usuario loguead
 
      if($imagenUsuario!=null){
 
@@ -36,7 +36,7 @@ public function index(){
 
 		    	$imagen=$key->imagen;;
 		    	
-		    	
+		    	header("Content-type:png");
 		    	break;
 		    }
 		    

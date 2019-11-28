@@ -18,6 +18,43 @@ Public $nombreImagen;
     }
 }
 
+
+function getImagen(){
+
+
+   if($this->session->userdata('inicio'))
+ 	{
+
+ 		$sql='select imagen from post where postUsuId ='.$this->session->userdata('id');
+      $img= $this->db->query($sql);
+      
+
+	
+	
+
+
+	
+        
+        
+        //Render image
+        
+        return $img;
+      
+
+     /* $archivo = $archiv;
+      $fp = fopen ($archivo, 'r');
+
+      $datos = fread ($fp, filesize ($archivo)); // cargo la imagen
+      fclose($fp);  
+  */
+       	
+
+
+    
+
+
+    }
+}
 }
 /**
  * 

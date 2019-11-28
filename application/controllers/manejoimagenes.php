@@ -7,7 +7,39 @@ class Manejoimagenes extends CI_Controller
 {
 	
 	function cargaImagen(){
-		$img=$this->input->post('imagen');
+		
+        
+        if(isset($_POST['Subir'])){
+	       $file_temp= $_FILES['upload']['tmp_name'];
+	       $imgContent = addslashes(file_get_contents($file_temp));//convertimos en archivo binario la img
+
+
+		 $this->load->model('modeloImagen');
+		 $this->modeloImagen->subirImagen($imgContent );//pasamos por parametro el nombre de la img
+		 $img=$this->modeloImagen->getImagen();
+
+		 
+
+     if($img!=null){
+
+		    foreach ($img->result() as $key ) {
+
+		    	$imagen=$key->imagen;;
+		    	header("Content-Type: png");
+		    	echo $imagen;
+		    	break;
+		    }
+		    
+        } else{
+        	$imagen='es nulo';
+        }
+
+
+        }
+
+	     
+/*
+	     $img=$this->input->post('upload');
 
 		 $imagen='upload';
 		 $config['upload_path']="upload/";//carpeta donde se gurdara las imgenes
@@ -29,10 +61,8 @@ class Manejoimagenes extends CI_Controller
 		 }
 
 		 $data['uploadSuccess']=$this->upload->data();
-		 var_dump($this->upload->data('file_name'));//si es exotoso, esta funcion muetra el contenido de un var
-
-		 $this->load->model('modeloImagen');
-		 $this->modeloImagen->subirImagen($this->upload->data('file_name'));//pasamos por parametro el nombre de la img
+		 var_dump($this->upload->data($img));//si es exotoso, esta funcion muetra el contenido de un var
+*/
 		
 	}
 }
