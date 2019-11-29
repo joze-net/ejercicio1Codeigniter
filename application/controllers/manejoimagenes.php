@@ -8,34 +8,19 @@ class Manejoimagenes extends CI_Controller
 	
 	function cargaImagen(){
 		
-        
+        $this->load->model('modeloImagen');
         if(isset($_POST['Subir'])){
 	       $file_temp= $_FILES['upload']['tmp_name'];
 	       $imgContent = addslashes(file_get_contents($file_temp));//convertimos en archivo binario la img
 
 
-		 $this->load->model('modeloImagen');
 		 $this->modeloImagen->subirImagen($imgContent );//pasamos por parametro el nombre de la img
-		 $img=$this->modeloImagen->getImagen();
-
 		 
 
-     if($img!=null){
+		}
+		
+        echo $this->modeloImagen->verImagen();
 
-		    foreach ($img->result() as $key ) {
-
-		    	$imagen=$key->imagen;;
-		    	header("Content-Type: png");
-		    	echo $imagen;
-		    	break;
-		    }
-		    
-        } else{
-        	$imagen='es nulo';
-        }
-
-
-        }
 
 	     
 /*
