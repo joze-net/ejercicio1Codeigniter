@@ -26,9 +26,9 @@ public function index(){
 		    	break;
 		    }
 		    }
-        }
 
-    $imagenUsuario=$this->Modelologin->getImagen($id);  //el id es para identificar el usuario loguead
+
+		     $imagenUsuario=$this->Modelologin->getImagen($id);  //el id es para identificar el usuario loguead
 
      if($imagenUsuario!=null){
 
@@ -36,13 +36,16 @@ public function index(){
 
 		    	$imagen=$key->imagen;;
 		    	
-		    	header("Content-type:png");
+		    	
 		    	break;
 		    }
 		    
         } else{
         	$imagen='es nulo';
         }
+        }
+
+   
 
 
 
@@ -60,8 +63,8 @@ public function index(){
 		header("location:".base_url());//
 
     }else{
-    	
-    	header("location:".base_url());//si usuariodb es null es por que no se obtuvieron datos de el usuer digititado, asi q //redirexionamos al inicio
+    	$mensaje='usuario o contraseña incorrecto';
+    	header("location:".base_url()."?errorlogin=true");//si usuariodb es null es por que no se obtuvieron datos de el usuer digititado, asi q //redirexionamos al inicio
     	
     }
 	

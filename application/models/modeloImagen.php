@@ -73,8 +73,8 @@ function getImagen(){
 
 		    foreach ($img->result() as $key ) {
 
-		    	$imagen=$key->imagen;;
-		    	header("Content-Type: png");
+		    	$imagen=$key->imagen;
+		    	header("Content-Type: jpg");
 		    	return  $imagen;
 		    	break;
 		    }

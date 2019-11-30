@@ -9,6 +9,7 @@ class Manejoimagenes extends CI_Controller
 	function cargaImagen(){
 		
         $this->load->model('modeloImagen');
+
         if(isset($_POST['Subir'])){
 	       $file_temp= $_FILES['upload']['tmp_name'];
 	       $imgContent = addslashes(file_get_contents($file_temp));//convertimos en archivo binario la img
@@ -19,7 +20,7 @@ class Manejoimagenes extends CI_Controller
 
 		}
 		
-        echo $this->modeloImagen->verImagen();
+       header('location: http://localhost/pruebaCodeigniter/articulos/mostrar');//redireccionamos a la pagina actual
 
 
 	     
@@ -50,6 +51,13 @@ class Manejoimagenes extends CI_Controller
 */
 		
 	}
+
+	function vizualizarImagen(){
+		$this->load->model('modeloImagen');
+		 echo $this->modeloImagen->verImagen();
+
+	}
+
 }
 
  ?>
