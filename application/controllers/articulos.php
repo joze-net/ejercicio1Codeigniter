@@ -92,7 +92,7 @@ public function nuevo(){
 		$idpost=$_GET['id'];
         $descripcion=$this->input->post('postactualizar');
 		echo $descripcion;
-		$sql="update post set descripcion='".$descripcion."' where id=".$idpost.";";
+		$sql="update post set descripcion='".$descripcion."',fecha= now() where id=".$idpost.";";
        $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
  	   header('location: '.base_url().'articulos/mostrar');
 	}

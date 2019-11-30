@@ -4,7 +4,7 @@ class ModeloPost extends CI_Model{
 
 function obtenerDatos(){
 	if($this->session->userdata('inicio')){
-		$sql='select * from post  where postUsuId='.$this->session->userdata("id").' order by id desc';
+		$sql='select * from post  where postUsuId='.$this->session->userdata("id").' order by fecha desc';
        $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
  	  return $resultado;
 	}else{
@@ -25,6 +25,16 @@ function obtenerDato($idpost){
  	  
 
 }
+
+function totalidadPost(){
+	
+		$sql='select descripcion,usunombre,usunombre,fecha from post inner join usuarios on postUsuId=usuid  order by fecha desc';
+       $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
+ 	  return $resultado;
+	
+ 	  
+
+} 
 
 
 

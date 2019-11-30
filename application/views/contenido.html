@@ -1,33 +1,46 @@
 
- <div class="container">
+
+
+<body>
+
+<div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
+         
+           
+            
+   <!-- $res esta almacenada en la variable $data en la funcion de mostrar contenida en articulos,donde consulta a la db   -->       
+<?php if($res != null){
 
-          <p>
-          <h3 style="color: red"><?php  if($GLOBALS['creado']=='false'){
+      foreach($res->result() as $fila){ ?><!--tener en cuente que result() es una funcion de codeigniter-->
 
-          echo 'Confirmaciòn de contraseña incorrecta, vuelve a intentarlo'; }else if($GLOBALS['creado']=='true'){echo 'Usuario creado';};  ?></h3>
-          <a href="<?php base_url()?>articulos/mostrar">
-            <h2 class="post-title">
-              Quieres ver contenido relevante que se dea tu interes, explora nuestro contenido
-            </h2>
-            <h3 class="post-subtitle">
-              Olvidate de tus problemas leyendo algo interesante
-            </h3>
-          </a>
+          
+          <p class="post-meta">
 
-       <!-- <p style="background-image: url('img/home-bg.jpg')"></p> -->
-     </p>
+                 <?php echo $fila->descripcion ?>
+           
+
+          
+            
+            <br> <?php if($this->session->userdata('inicio') && $this->session->userdata('usuario')==$fila->usunombre ){echo  'Publicado por <strong>ti</strong>'; }else{ echo  'Publicado por <strong>' . $fila->usunombre. '</strong>';} ?>
+
+            <br> <?php echo  'Fecha publicacion ' . $fila->fecha ?>
+              
+             
+            </p>
+
+          <?php }} ?>      
         </div>
        
         <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-        </div>
+        
       </div>
     </div>
   </div>
 
+
+
   <hr>
 
+</body>

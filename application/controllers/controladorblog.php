@@ -13,9 +13,12 @@ class controladorblog extends CI_Controller{
 		$this->load->view('navegacion.html');
 		$this->load->view('header.html');
           //  echo site_url();
+        $resultado=$this->load->ModeloPost->totalidadPost();
+		$data=array('res' => $resultado);
 
+		
         
-		$this->load->view('contenido.html');
+		$this->load->view('contenido.html',$data);
 		$this->load->view('footer.html');
 	
 
