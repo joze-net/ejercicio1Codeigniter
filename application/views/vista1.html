@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
+        
          
            
             
@@ -15,45 +15,56 @@
 
       foreach($res->result() as $fila){ ?><!--tener en cuente que result() es una funcion de codeigniter-->
 
-          
-          <p class="post-meta"><?php echo $fila->descripcion ?>
-            <button btn btn-primary btn-lg active" role="button" style="float: right; ">
+
+ <button class=" btn btn-default btn-xs "style="float: right;" role="button"  ">
+             
                <a href="http://localhost/pruebaCodeigniter/articulos/eliminarpost?idpost=<?php echo $fila->id?>" style="float: right; margin-left: 4px" >eliminar</a>
+            
              </button>  
 
-             <button btn btn-primary btn-lg active" role="button" style="float: right;">
+             <button class=" btn btn-default btn-xs "style="float: right;" role="button">
+
                 <a href="http://localhost/pruebaCodeigniter/articulos/cargarpost?idpost=<?php echo $fila->id?>" style="float: right;" >actualizar</a>
               </button>
+
+ <div class="post-preview" style="width: 60%;">
+                 
+          <p class="post-meta"  ><?php echo $fila->descripcion ?></p>
+          <p  class="post-meta">publicado <?php echo  $fila->fecha ?> 
+</div>
+           
+
+           
             
-            <br>publicado <?php echo  $fila->fecha ?>
-              
+         
+            
              
-            </p>
+            
 
           <?php }}else{?>
 
             <h3 class="post-subtitle">
               este contenido es solo para usuarios
             </h3>  
-
+ ¡
             <?php }?>       
-        </div>
+       
        
         <!-- Pager -->
         <div class="clearfix">
-          <a class="btn btn-primary btn-lg btn-block" href="http://localhost/pruebaCodeigniter/articulos/nuevo">Nuevo post</a>
+          <a class="btn btn-primary btn-lg btn-block" style="margin-top: 2%" href="http://localhost/pruebaCodeigniter/articulos/nuevo">Nuevo post</a>
         </div>
       </div>
     </div>
   </div>
 
-<div class="container">
+<div class="container" style="margin-top: 5%;">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
 
       <form action="http://localhost/pruebaCodeigniter/manejoimagenes/cargaImagen" method="post" enctype="multipart/form-data"><!--  no se debe olvidar poner el enctype para subir archivos-->  
         <input class="btn btn-default btn-choose"type="file" name="upload" id="upload">
-        <input class="btn btn-success btn-xs float-right" type="submit" name="Subir" value="Cambir Imagen">
+        <input class="btn btn-success btn-xs float-right" type="submit" name="Subir" value="Cambiar Imagen">
       </form>
       
     </div>

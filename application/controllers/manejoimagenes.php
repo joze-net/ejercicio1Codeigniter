@@ -11,13 +11,17 @@ class Manejoimagenes extends CI_Controller
         $this->load->model('modeloImagen');
 
         if(isset($_POST['Subir'])){
-	       $file_temp= $_FILES['upload']['tmp_name'];
-	       $imgContent = addslashes(file_get_contents($file_temp));//convertimos en archivo binario la img
+
+           if ($_FILES['upload']['name']!=null ){//esto es para validar que hay algo en el submit tipo file
+           	    $file_temp= $_FILES['upload']['tmp_name'];
+	            $imgContent = addslashes(file_get_contents($file_temp));//convertimos en archivo binario la img
 
 
-		 $this->modeloImagen->subirImagen($imgContent );//pasamos por parametro el nombre de la img
+		        $this->modeloImagen->subirImagen($imgContent );//pasamos por parametro el nombre de la img
 		 
 
+           }
+	      
 		}
 		
        header('location: http://localhost/pruebaCodeigniter/articulos/mostrar');//redireccionamos a la pagina actual
