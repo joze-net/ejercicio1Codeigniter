@@ -24,7 +24,7 @@ class Modelologin extends CI_Model{
    }	
 
    public function registro($usuario,$contraseña){
-    $sql="insert into usuarios (usunombre,contraseña) values('$usuario','$contraseña');";
+    $sql="insert into usuarios (usunombre,contraseña,imagen) values('$usuario','$contraseña','imagen por defecto');";
       $registroUsuario=$this->db->query($sql);
    }
 
