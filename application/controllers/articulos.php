@@ -82,6 +82,7 @@ public function nuevo(){
 
 
 	function vercontenido(){
+		
 		$this->load->view('head.html');
 		$this->load->view('navegacion.html');
 

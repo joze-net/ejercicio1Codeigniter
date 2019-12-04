@@ -16,7 +16,7 @@
 
  <div class="post-preview" style="width: 60%;">
                  
-          <p class="post-meta"  ><a href=""><?php echo $fila->contenido ?></a></p>
+          <p class="post-meta"  ><?php echo $fila->contenido ?></p>
           <p  class="post-meta">publicado <?php echo  $fila->fecha ?> 
 </div>
            
@@ -28,19 +28,13 @@
              
             
 
-          <?php }}else{?>
+          <?php }}?>
 
-            <h3 class="post-subtitle">
-              este contenido es solo para usuarios
-            </h3>  
- ¡
-            <?php }?>       
+                
        
        
         <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary btn-lg btn-block" style="margin-top: 2%" href="http://localhost/pruebaCodeigniter/articulos/nuevo">Nuevo post</a>
-        </div>
+        
       </div>
     </div>
   </div>
