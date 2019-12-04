@@ -28,7 +28,7 @@ function obtenerDato($idpost){
 
 function totalidadPost(){
 	
-		$sql='select descripcion,usunombre,usunombre,fecha from post inner join usuarios on postUsuId=usuid  order by fecha desc';
+		$sql='select id,descripcion,usunombre,usunombre,fecha from post inner join usuarios on postUsuId=usuid  order by fecha desc';
        $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
  	  return $resultado;
 	

@@ -16,8 +16,12 @@
            <form action="http://localhost/pruebaCodeigniter/articulos/guardarpost" method="post">
              <label for="nuevopost" >nuevo post</label>
               <div class='form-group'>
-                            <input class='form-control large' style='text-align: center;'autofocus type='text' name='nuevopost'autofocus placeholder='nuevopost' id="nuevopost" />
-                          </div>
+                     <input class='form-control large' style='text-align: center;'autofocus type='text' name='nuevopost'autofocus placeholder='Descripcion del post' id="nuevopost" />
+              </div>
+
+               <div class='form-group'>
+                     <textarea class="form-control" rows="3" name="contenido"></textarea>
+              </div>
                           
              <input class="btn btn-primary float-right" type="submit" name="" value="Agregar Post">
            </form>

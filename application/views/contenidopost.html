@@ -1,0 +1,52 @@
+<body>
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+         
+           
+            
+   <!-- $res esta almacenada en la variable $data en la funcion de mostrar contenida en articulos,donde consulta a la db   -->       
+<?php if($res != null){
+
+      foreach($res->result() as $fila){ ?><!--tener en cuente que result() es una funcion de codeigniter-->
+
+
+
+ <div class="post-preview" style="width: 60%;">
+                 
+          <p class="post-meta"  ><a href=""><?php echo $fila->contenido ?></a></p>
+          <p  class="post-meta">publicado <?php echo  $fila->fecha ?> 
+</div>
+           
+
+           
+            
+         
+            
+             
+            
+
+          <?php }}else{?>
+
+            <h3 class="post-subtitle">
+              este contenido es solo para usuarios
+            </h3>  
+ ¡
+            <?php }?>       
+       
+       
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary btn-lg btn-block" style="margin-top: 2%" href="http://localhost/pruebaCodeigniter/articulos/nuevo">Nuevo post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <hr>
+
+</body>

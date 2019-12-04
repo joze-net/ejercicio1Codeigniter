@@ -42,9 +42,9 @@ public function nuevo(){
 	   
 
 	   $nuevopost=$this->input->post('nuevopost');//guardamos el post escrito desde el form de postnuevo
-	   
+	   $contenido=$this->input->post('contenido');
 
-	   $sql= " insert into post (descripcion,fecha,imagen,postUsuId) values ('$nuevopost',now(),'sin imagen',".$this->session->userdata('id').")";
+	   $sql= " insert into post (descripcion,fecha,imagen,postUsuId,contenido) values ('$nuevopost',now(),'sin imagen',".$this->session->userdata('id').",'$contenido')";
 	   $this->db->query($sql);//almacenamos en la bd
 
 	   header('location: '. base_url().'articulos/mostrar');
@@ -81,6 +81,27 @@ public function nuevo(){
 	} 
 
 
+	function vercontenido(){
+		$this->load->view('head.html');
+		$this->load->view('navegacion.html');
+
+		  $idpost=$_GET['idpost'];
+        $resultado=$this->load->ModeloPost->obtenerDato($idpost);
+		$data=array('res' => $resultado);
+
+
+		$this->load->view('header.html',$data);
+       
+      
+
+
+
+		
+		$this->load->view('contenidopost.html',$data);
+		$this->load->view('footer.html');
+	}
+
+
 	function actualizarpost(){
 
 		//$descripcion=$_POST['postactualizar'];
@@ -91,8 +112,9 @@ public function nuevo(){
 	if($this->session->userdata('inicio')){
 		$idpost=$_GET['id'];
         $descripcion=$this->input->post('postactualizar');
-		echo $descripcion;
-		$sql="update post set descripcion='".$descripcion."',fecha= now() where id=".$idpost.";";
+        $contenido=$this->input->post('nuevocontenido');
+		
+		$sql="update post set descripcion='".$descripcion."',fecha= now(),contenido='".$contenido."' where id=".$idpost.";";
        $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
  	   header('location: '.base_url().'articulos/mostrar');
 	}

@@ -8,8 +8,17 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Mi blog</h1>
-            <span class="subheading">En esta pagina se encontraran contenidos interesantes</span>
+            <h1>
+              
+            <?php if(isset($res) != null){  foreach($res->result() as $fila){ ?>
+              
+                  <?php echo $fila->descripcion ?>        
+           
+            <?php } }?>
+
+
+            </h1>
+
           </div>
         </div>
       </div>
