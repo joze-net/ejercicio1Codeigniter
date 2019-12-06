@@ -1,8 +1,20 @@
 <?php if($this->session->userdata('inicio')){   ?>
 
 <!--<header class="masthead" style="background-image: url('upload/<?php echo $this->session->userdata('imagen')?>');  " >-->
- <header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/manejoimagenes/vizualizarImagen') ">
-<!--<img src="http://localhost/pruebaCodeigniter/manejoimagenes/cargaImagen">-->
+   <?php if(isset($res) != null){  foreach($res->result() as $fila){ ?>
+ <?php $GLOBALS['idContenido']=$fila->id; ?>
+   <header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/manejoimagenes/vizualizarImagenpost?id=<?php echo $fila->id;   ?>') "> 
+
+     
+
+       <?php } }else{?>
+
+        <header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/manejoimagenes/vizualizarImagen') ">
+
+       
+
+
+      <?php } ?>
   <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -10,11 +22,15 @@
           <div class="site-heading">
             <h1>
               
-            <?php if($res != null){  foreach($res->result() as $fila){ ?>
+            <?php if(isset($res) != null){  foreach($res->result() as $fila){ ?>
               
                   <?php echo $fila->descripcion ?>        
            
-            <?php } }?>
+            <?php } }else{ echo 'Hola '.$this->session->userdata('usuario');}?>
+
+
+
+
 
 
             </h1>
@@ -26,7 +42,22 @@
   </header>
   
 <?php  } else{ ?>
-<header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/upload/nombre_archivo9.jpg')">
+
+<?php if(isset($res) != null){  foreach($res->result() as $fila){ ?>
+ <?php $GLOBALS['idContenido']=$fila->id; ?>
+   <header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/manejoimagenes/vizualizarImagenpost?id=<?php echo $fila->id;   ?>') "> 
+
+     
+
+       <?php } }else{?>
+
+       <header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/upload/nombre_archivo9.jpg')">
+
+       
+
+
+      <?php } ?>
+
 
 
     <div class="overlay"></div>
@@ -40,7 +71,12 @@
               
                   <?php echo $fila->descripcion ?>        
            
-            <?php } }?>
+            <?php } }else{?>
+
+            Bienvenido
+
+
+            <?php }  ?>
 
             </h1>
            

@@ -92,13 +92,7 @@ public function nuevo(){
 
 
 		$this->load->view('header.html',$data);
-       
-      
-
-
-
-		
-		$this->load->view('contenidopost.html',$data);
+     	$this->load->view('contenidopost.html',$data);
 		$this->load->view('footer.html');
 	}
 
@@ -115,9 +109,29 @@ public function nuevo(){
         $descripcion=$this->input->post('postactualizar');
         $contenido=$this->input->post('nuevocontenido');
 		
-		$sql="update post set descripcion='".$descripcion."',fecha= now(),contenido='".$contenido."' where id=".$idpost.";";
-       $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
- 	   header('location: '.base_url().'articulos/mostrar');
+		
+ 	   
+
+
+ 	    if(isset($_POST['actualizarpost'])){
+
+           if ($_FILES['upload']['name']!=null ){//esto es para validar que hay algo en el submit tipo file
+           	    $file_temp= $_FILES['upload']['tmp_name'];
+	            $imgContent = addslashes(file_get_contents($file_temp));//convertimos en archivo binario la img
+
+
+		        $sql="update post set descripcion='".$descripcion."',fecha= now(),contenido='".$contenido."',imagen='".$imgContent."' where id=".$idpost.";";
+                $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
+		 
+                header('location: '.base_url().'articulos/mostrar');
+           }else{
+           	$sql="update post set descripcion='".$descripcion."',fecha= now(),contenido='".$contenido."' where id=".$idpost.";";
+           $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
+            header('location: '.base_url().'articulos/mostrar');
+           }
+       }
+	      
+		
 	}
  	  
 

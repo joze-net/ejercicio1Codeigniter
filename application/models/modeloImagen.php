@@ -4,6 +4,9 @@ class ModeloImagen extends CI_Model{
 
 Public $nombreImagen;
 
+
+
+
  function subirImagen($nombreImg)
 
  {
@@ -28,33 +31,9 @@ function getImagen(){
  	{
 
  		$sql='select imagen from usuarios where usuId ='.$this->session->userdata('id');
-      $img= $this->db->query($sql);
+    $img= $this->db->query($sql);
+    return $img;
       
-
-	
-	
-
-
-	
-        
-        
-        //Render image
-        
-        return $img;
-      
-
-     /* $archivo = $archiv;
-      $fp = fopen ($archivo, 'r');
-
-      $datos = fread ($fp, filesize ($archivo)); // cargo la imagen
-      fclose($fp);  
-  */
-       	
-
-
-    
-
-
     }
 }
 
@@ -85,6 +64,35 @@ function getImagen(){
 
 
         }
+
+
+
+  function verImagenpost($id){
+
+
+
+      $sql='select imagen from post where id='.$id;
+      $img= $this->db->query($sql);
+      
+
+      if($img!=null){
+
+          foreach ($img->result() as $key ) {
+
+            $imagen=$key->imagen;
+            header("Content-Type: jpg");
+            return  $imagen;
+            break;
+          }
+        
+      } else{
+          $imagen='es nulo';
+        }
+
+
+  }
+
+
 }
 /**
  * 

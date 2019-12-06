@@ -62,6 +62,14 @@ class Manejoimagenes extends CI_Controller
 
 	}
 
+
+	function vizualizarImagenpost(){
+		 $id=$_GET['id'];
+		$this->load->model('modeloImagen');
+		 echo $this->modeloImagen->verImagenpost($id);
+
+	}
+
 }
 
  ?>

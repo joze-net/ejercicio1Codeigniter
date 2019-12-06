@@ -10,7 +10,7 @@
                   
          
 
-           <form action="http://localhost/pruebaCodeigniter/articulos/actualizarpost?id=<?php if($res != null){ foreach($res->result() as $fila){ echo $fila->id;}} ?>" method="post">
+           <form action="http://localhost/pruebaCodeigniter/articulos/actualizarpost?id=<?php if($res != null){ foreach($res->result() as $fila){ echo $fila->id;}} ?>" method="post" enctype="multipart/form-data">
               <label for="postactualizar" >nuevo post</label>
                 <div class='form-group'>
                   <input class='form-control large' style='text-align: center;'autofocus type='text' name='postactualizar'autofocus value="<?php if($res != null){ foreach($res->result() as $fila){ echo $fila->descripcion;}}?>"
@@ -23,9 +23,10 @@
                     <?php if($res != null){ foreach($res->result() as $fila){ echo $fila->contenido;}}?>
 
                      </textarea>
+                     <input class="btn btn-default btn-choose"type="file" name="upload" id="upload" >
                  </div>
                 <button ><a href="<?php echo base_url()?>/articulos/mostrar">Volver</a></button>
-             <input class="btn btn-primary float-right" type="submit" name="" value="ActualizarPost">
+             <input class="btn btn-primary float-right" type="submit" name="actualizarpost" value="ActualizarPost">
            </form>
 
          

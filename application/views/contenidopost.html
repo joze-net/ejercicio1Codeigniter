@@ -18,6 +18,19 @@
                  
           <p class="post-meta"  ><?php echo $fila->contenido ?></p>
           <p  class="post-meta">publicado <?php echo  $fila->fecha ?> 
+
+<?php if($this->session->userdata('id')==$fila->postUsuId){ ?>
+            <button class=" btn btn-default btn-xs "style="float: right;" role="button"  ">
+             
+               <a href="http://localhost/pruebaCodeigniter/articulos/eliminarpost?idpost=<?php echo $fila->id?>" style="float: right; margin-left: 4px" >eliminar</a>
+            
+             </button>  
+
+             <button class=" btn btn-default btn-xs "style="float: right;" role="button">
+
+                <a href="http://localhost/pruebaCodeigniter/articulos/cargarpost?idpost=<?php echo $fila->id?>" style="float: right;" >actualizar</a>
+              </button>
+<?php }?>
 </div>
            
 
