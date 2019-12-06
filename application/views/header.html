@@ -1,9 +1,8 @@
 <?php if($this->session->userdata('inicio')){   ?>
 
-<!--<header class="masthead" style="background-image: url('upload/<?php echo $this->session->userdata('imagen')?>');  " >-->
+
    <?php if(isset($res) != null){  foreach($res->result() as $fila){ ?>
- <?php $GLOBALS['idContenido']=$fila->id; ?>
-   <header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/manejoimagenes/vizualizarImagenpost?id=<?php echo $fila->id;   ?>') "> 
+    <header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/manejoimagenes/vizualizarImagenpost?id=<?php echo $fila->id;   ?>') "> 
 
      
 
@@ -44,7 +43,7 @@
 <?php  } else{ ?>
 
 <?php if(isset($res) != null){  foreach($res->result() as $fila){ ?>
- <?php $GLOBALS['idContenido']=$fila->id; ?>
+
    <header class="masthead" style="background-image: url('http://localhost/pruebaCodeigniter/manejoimagenes/vizualizarImagenpost?id=<?php echo $fila->id;   ?>') "> 
 
      

@@ -66,22 +66,23 @@ public function nuevo(){
 
 
 	function cargarpost(){
+
 		$this->load->view('head.html');
 		$this->load->view('navegacion.html');
-		$this->load->view('header.html');
+		
        
         $idpost=$_GET['idpost'];
         $resultado=$this->load->ModeloPost->obtenerDato($idpost);
 		$data=array('res' => $resultado);
 
 
-		
+		$this->load->view('header.html',$data);
 		$this->load->view('postactualizar.html',$data);
 		$this->load->view('footer.html');
 	} 
 
 
-	function vercontenido(){
+	function vercontenido(){//--------------
 		
 		$this->load->view('head.html');
 		$this->load->view('navegacion.html');
@@ -123,11 +124,11 @@ public function nuevo(){
 		        $sql="update post set descripcion='".$descripcion."',fecha= now(),contenido='".$contenido."',imagen='".$imgContent."' where id=".$idpost.";";
                 $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
 		 
-                header('location: '.base_url().'articulos/mostrar');
+                header('location: '.base_url().'articulos/vercontenido?idpost='.$idpost);
            }else{
            	$sql="update post set descripcion='".$descripcion."',fecha= now(),contenido='".$contenido."' where id=".$idpost.";";
            $resultado=$this->db->query($sql);//aqui estamos consultando en la base de datos
-            header('location: '.base_url().'articulos/mostrar');
+            header('location: '.base_url().'articulos/vercontenido?idpost='.$idpost);
            }
        }
 	      

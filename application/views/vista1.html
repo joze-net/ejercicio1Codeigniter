@@ -16,20 +16,11 @@
       foreach($res->result() as $fila){ ?><!--tener en cuente que result() es una funcion de codeigniter-->
 
 
- <button class=" btn btn-default btn-xs "style="float: right;" role="button"  ">
-             
-               <a href="http://localhost/pruebaCodeigniter/articulos/eliminarpost?idpost=<?php echo $fila->id?>" style="float: right; margin-left: 4px" >eliminar</a>
-            
-             </button>  
-
-             <button class=" btn btn-default btn-xs "style="float: right;" role="button">
-
-                <a href="http://localhost/pruebaCodeigniter/articulos/cargarpost?idpost=<?php echo $fila->id?>" style="float: right;" >actualizar</a>
-              </button>
+ 
 
  <div class="post-preview" style="width: 60%;">
                  
-          <p class="post-meta"  ><a href="http://localhost/pruebaCodeigniter/articulos/vercontenido?idpost=<?php echo $fila->id ?>"><?php echo $fila->descripcion ?></a></p>
+          <p class="post-meta"  ><a href="http://localhost/pruebaCodeigniter/articulos/vercontenido?idpost=<?php echo $fila->id ?>"><button class="btn btn-link"><?php echo $fila->descripcion ?></button></a></p>
           <p  class="post-meta">publicado <?php echo  $fila->fecha ?> 
 </div>
            
