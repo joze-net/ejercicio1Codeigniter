@@ -18,7 +18,7 @@ public function index(){
 
 		    foreach ($usuariodb->result() as $key ) {
 
-		    	if($key->usunombre==$usuario && $key->contraseña==$contraseña){
+		    	if($key->usunombre==$usuario &&  password_verify($contraseña, $key->contraseña) ){//la password esta encriptada en db,si la contra //inigresada es igual al hash usando el metodo password_verify devolvera true
 		    	$id=$key->usuid;
 		    	$usuariodb=$key->usunombre;
 		    	$contrasenadb=$key->contraseña;
@@ -88,8 +88,10 @@ function registrarse(){
     $GLOBALS['creado']='';
 
 	if ($nuevacontraseña==$confirmarcontraseña && $nuevacontraseña!="") {
+		$contraseña_encriptada= password_hash($nuevacontraseña, PASSWORD_BCRYPT);//encriptamos la contraseña
 		$this->load->model('modelologin');
-	    $this->modelologin->registro($nuevousuario,$nuevacontraseña);
+
+	    $this->modelologin->registro($nuevousuario,$contraseña_encriptada);
 	    
 	    header('location: '.base_url()."?creado=true" );
 	}else{
