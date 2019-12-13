@@ -24,7 +24,7 @@ class Manejoimagenes extends CI_Controller
 	      
 		}
 		
-       header('location: http://localhost/pruebaCodeigniter/articulos/mostrar');//redireccionamos a la pagina actual
+       header('location: http://localhost/pruebaCodeigniter/controladorlogin/configurar');//redireccionamos a la pagina actual
 
 
 	     

@@ -46,6 +46,20 @@ class Modelologin extends CI_Model{
       return $img;  
    }
 
+    public function nuevonombre($nombre){
+
+      $sql="Update usuarios set usunombre=$nombre where usuid=".$this->session->userdata('id');
+      $registroUsuario=$this->db->query($sql);
+
+   }
+
+    public function cambiarpassword($id,$contraseña){
+
+      $sql="update usuarios set contraseña='$contraseña' where usuid=".$id;///actualizamos la contraseña
+      $this->db->query($sql);
+
+   }
+
 }
 
  ?>

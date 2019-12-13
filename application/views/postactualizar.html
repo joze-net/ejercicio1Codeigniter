@@ -11,7 +11,7 @@
          
 
            <form action="http://localhost/pruebaCodeigniter/articulos/actualizarpost?id=<?php if($res != null){ foreach($res->result() as $fila){ echo $fila->id;}} ?>" method="post" enctype="multipart/form-data">
-              <label for="postactualizar" >nuevo post</label>
+              <label for="postactualizar" >Actualizar post</label>
                 <div class='form-group'>
                   <input class='form-control large' style='text-align: center;'autofocus type='text' name='postactualizar'autofocus value="<?php if($res != null){ foreach($res->result() as $fila){ echo $fila->descripcion;}}?>"
                    id="postactualizar" /> <!-- aqui ponemos la descripcion de la base de datos como valor del txt -->

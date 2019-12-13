@@ -102,6 +102,71 @@ function registrarse(){
 	
 }
 
+function configurar()
+{
+	$this->load->view('head.html');
+		$this->load->view('navegacion.html');
+		$this->load->view('header.html');
+          //  echo site_url()
+        $this->load->view('personalizar.html');
+		$this->load->view('footer.html');
+}
+
+
+function cambiarnombre()
+{
+	if ($this->session->userdata('inicio')) //se debe haber iniciado session
+	{
+		$nuevoNombre=$_POST['nuevonombre'];//obtenemos el nombre digitado
+		$this->load->model('modelologin');//lamamos el modelo que tiene la funcion de cambiar el nombre en bd
+		$this->modelologin->nuevonombre($nuevoNombre);//llamamos el metodo encargado 
+		
+
+//aqui guardamos los datos de session en variables y poder manipular los datos para crear nuevamente los datos de session
+		$id=$this->session->userdata('id');
+		$contrasenadb=$this->session->userdata('contraseña');
+		$imagen=$this->session->userdata('imagen');
+		//----------------------------------------------------------
+		//establecemos los datos de que pasamos por parametro a al sesion
+
+		 $data = array(
+        'id'=>	$id,
+		'usuario' => $nuevoNombre,//este es el dato de session que cambiamos por el nuevo nombre
+		'contraseña' => $contrasenadb,
+		'imagen' => $imagen,
+		'inicio' => true
+	    );
+		 //-------------------------------------------
+		 //creamos la session
+
+		  $this->session->set_userdata($data);
+
+//redireccionamos a la pagina de perzonalizar
+		  header('location: http://localhost/pruebaCodeigniter/controladorlogin/configurar');
+	}
+}
+
+
+function cambiarcontrasena()
+{
+	if ($this->session->userdata('inicio')) //se debe iniciar session
+	{
+		$nuevacontraseña=$_POST['nuevacontraseña'];///obtenemos la contraseña del campo de texto
+		$confirmarcontraseña=$_POST['confirmarnuevacontraseña'];//tambn la confirmacion
+
+		if ($nuevacontraseña==$confirmarcontraseña) //los dos datos debenn ser iguales
+		{
+            $password= password_hash($nuevacontraseña, PASSWORD_BCRYPT);//encriptamos la contraseña
+			$this->load->model('modelologin');//este modelo tiene la funcion para hacer la actualizacion
+			$this->modelologin->cambiarpassword($this->session->userdata('id'),$password);//llamamos el metodo y le pasamos los parametros necesarios
+			header('location: http://localhost/pruebaCodeigniter/controladorlogin/configurar');
+		}
+
+
+
+	}
+}
+
 }
 
  ?>

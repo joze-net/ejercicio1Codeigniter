@@ -44,15 +44,25 @@ public function nuevo(){
 	   $nuevopost=$this->input->post('nuevopost');//guardamos el post escrito desde el form de postnuevo
 	   $contenido=$this->input->post('contenido');
 
-	   $sql= " insert into post (descripcion,fecha,imagen,postUsuId,contenido) values ('$nuevopost',now(),'sin imagen',".$this->session->userdata('id').",'$contenido')";
-	   $this->db->query($sql);//almacenamos en la bd
 
-	   header('location: '. base_url().'articulos/mostrar');
+	    if ($_FILES['upload']['name']!=null )
+	    {//esto es para validar que hay algo en el submit tipo file
+           	    $file_temp= $_FILES['upload']['tmp_name'];
+	            $imgContent = addslashes(file_get_contents($file_temp));//convertimos en archivo binario la img      
+				$sql=" insert into post (descripcion,fecha,imagen,postUsuId,contenido) values ('$nuevopost',now(),'".$imgContent."',".$this->session->userdata('id').",'$contenido')";
+				$this->db->query($sql);
+				header('location: '. base_url().'articulos/mostrar');
+				
+	    }else{
+
+        $sql= " insert into post (descripcion,fecha,imagen,postUsuId,contenido) values ('$nuevopost',now(),'sin imagen',".$this->session->userdata('id').",'$contenido')";
+        $this->db->query($sql);
+        header('location: '. base_url().'articulos/mostrar');
+
+	         }
 
 
-
-
-}
+	     }
 
 
 	function eliminarpost(){
