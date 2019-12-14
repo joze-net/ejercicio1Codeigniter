@@ -48,7 +48,7 @@ class Modelologin extends CI_Model{
 
     public function nuevonombre($nombre){
 
-      $sql="Update usuarios set usunombre=$nombre where usuid=".$this->session->userdata('id');
+      $sql="Update usuarios set usunombre='$nombre' where usuid=".$this->session->userdata('id');
       $registroUsuario=$this->db->query($sql);
 
    }

@@ -3,33 +3,79 @@
 
 <body>
 
-<div class="container">
+<div class="container" style=" padding: 1%;">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
 
         
-         <div class="form-group">
+         <div class="form-group" style="background: #cac9d6; padding: 4%;">
          	<form method="POST" action="http://localhost/pruebaCodeigniter/controladorlogin/cambiarnombre">
-         		<label>Cambiar nombre de usuario</label>
-         		<input type="text" name="nuevonombre" required>
-         		<input type="submit"  value="Modificar" class="btn btn-primary mb-2">
+         		
+
+
+         		<div class="form-group">
+                 <label class="col-lg-8 control-label">Cambiar nombre de usuario</label>
+                 <div class="col-lg-4">
+                 <input type="text" class="form-control" name="nuevonombre" />
+                </div>
+              </div>
+         		
+
+         		<div class="form-group">
+  			  		 <div class="text-center">
+    		    	 <button type="submit" class="btn btn-primary " value="Modificar">Modificar</button>
+    		 		 </div>
+	        	</div>
          	</form>
          </div>
 
           <div class="form-group">
          	<form method="POST" action="http://localhost/pruebaCodeigniter/controladorlogin/cambiarcontrasena">
-         		<div>
-         		<label>Cambiar contraseña</label>
-         		<input type="password" name="nuevacontraseña">
-         		</div>
-         		<div>
-         	    <label>Confirmar contraseña</label>
-         		<input type="password" name="confirmarnuevacontraseña">
-         		<input type="submit" name="" value="Modificar" class="btn btn-primary mb-2">
-         		</div>
+             <div style="background: #cac9d6; padding: 2%;">
+         		
+         		<div class="form-group">
+                 <label class="col-lg-8 control-label">Cambiar contraseña</label>
+                 <div class="col-lg-4">
+                 <input type="password" class="form-control" name="nuevacontraseña" />
+                </div>
+              </div>
+
+              <div class="form-group">
+   				 <label class="col-lg-8 control-label">Confirmar contraseña</label>
+  				  <div class="col-lg-4">
+   				   <input type="password" class="form-control" name="confirmarnuevacontraseña" />
+   				 </div>
+ 			 </div>
+
+         	<div class="form-group">
+  			   <div class="text-center">
+    		     <button type="submit" class="btn btn-primary " value="Modificar">Modificar</button>
+    		  </div>
+	        </div>
+
+
+         	</div>
          	</form>
          </div>
+
+          <div class="form-group"style="background: #cac9d6; padding: 2%;" >
+ 			
+                <div>
+   				   <form action="http://localhost/pruebaCodeigniter/manejoimagenes/cargaImagen" method="post" enctype="multipart/form-data"><!--  no se debe olvidar poner el enctype para subir archivos-->  
+     			   <input class="btn btn-default btn-choose"type="file" name="upload" id="upload">
+ 				   
+
+ 				   <div class="form-group">
+  			  		 <div class="text-center">
+    		    	 <button type="submit" class="btn btn-primary " name="Subir" value="Cambiar imagen">Modificar</button>
+    		 		 </div>
+	        		</div>
+     			   </form>
+     			</div>
+      
+  				  
+  		</div>
 
 
          
@@ -38,22 +84,17 @@
         </div> 
       </div>
     </div>
+
+
+
+
   </div>
 
 
 
-  <div class="container" style="margin-top: 5%;">
- 			 <div class="row">
-  				  <div class="col-lg-8 col-md-10 mx-auto">
-
-   				   <form action="http://localhost/pruebaCodeigniter/manejoimagenes/cargaImagen" method="post" enctype="multipart/form-data"><!--  no se debe olvidar poner el enctype para subir archivos-->  
-     			   <input class="btn btn-default btn-choose"type="file" name="upload" id="upload">
- 				   <input class="btn btn-success btn-xs float-right" type="submit" name="Subir" value="Cambiar Imagen">
-     			   </form>
-      
-  				  </div>
-  			</div>
-  </div>
+ 
+ 			
+  
 
 
 

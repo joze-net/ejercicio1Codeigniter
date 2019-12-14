@@ -160,6 +160,8 @@ function cambiarcontrasena()
 			$this->load->model('modelologin');//este modelo tiene la funcion para hacer la actualizacion
 			$this->modelologin->cambiarpassword($this->session->userdata('id'),$password);//llamamos el metodo y le pasamos los parametros necesarios
 			header('location: http://localhost/pruebaCodeigniter/controladorlogin/configurar');
+		}else{
+			header('location: http://localhost/pruebaCodeigniter/controladorlogin/configurar');
 		}
 
 
