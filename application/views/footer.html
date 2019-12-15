@@ -53,6 +53,19 @@
 
 
 
+  <?php  if(isset($_GET['creado'])){  if($_GET['creado']=='true'){ ?>
+  <?php echo  ' 
+
+  <script type="text/javascript"> alert("usuario creado");window.location="http://localhost/pruebaCodeigniter/";</script>
+
+   '; }else{ ?>
+
+
+  <script type="text/javascript"> alert("Error al crear usuario");window.location="http://localhost/pruebaCodeigniter/";</script>
+
+   <?php }} ?>
+
+
 
 
 

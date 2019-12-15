@@ -51,13 +51,13 @@
                       <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;float: right;'>
                         <form action='http://localhost/pruebaCodeigniter/controladorlogin/registrarse' method='post' accept-charset='UTF-8' role="form" style="float: right;">
                           <div class='form-group'>
-                            <input class='form-control large' style='text-align: center;'autofocus type='text' name='nuevouser'autofocus placeholder='usuario' />
+                            <input class='form-control large' style='text-align: center;'autofocus type='text' name='nuevouser'autofocus placeholder='usuario' required />
                           </div>
                           <div class='form-group'>
-                            <input class='form-control large' style='text-align: center;' type='password' name='nuevopassword' placeholder='contraseña' />
+                            <input class='form-control large' style='text-align: center;' type='password' name='nuevopassword' placeholder='contraseña' required/>
                           </div>
                           <div class='form-group'>
-                            <input class='form-control large' style='text-align: center;' type='password' name='confirmarpassword' placeholder='confirmar contraseña' />
+                            <input class='form-control large' style='text-align: center;' type='password' name='confirmarpassword' placeholder='confirmar contraseña' required />
                           </div>
                           <div class='form-group'>
                             <button class='btn btn-primary' style='width: 380px;' type='submit'>Aceptar</button>
@@ -74,10 +74,10 @@
                       <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
                         <form action='http://localhost/pruebaCodeigniter/controladorlogin' method='post' accept-charset='UTF-8' role="form">
                           <div class='form-group'>
-                            <input class='form-control large' style='text-align: center;' type='text' name='user' placeholder='usuario'/>
+                            <input class='form-control large' style='text-align: center;' type='text' name='user' placeholder='usuario'/ required>
                           </div>
                           <div class='form-group'>
-                            <input class='form-control large' style='text-align: center;' type='password' name='password' placeholder='contraseña' />
+                            <input class='form-control large' style='text-align: center;' type='password' name='password' placeholder='contraseña' required />
                           </div>
                           <div class='form-group'>
                             <button class='btn btn-primary' style='width: 380px;' type='submit'>INGRESAR</button>
