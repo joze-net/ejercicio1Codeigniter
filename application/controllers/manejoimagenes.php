@@ -70,6 +70,10 @@ class Manejoimagenes extends CI_Controller
 
 	}
 
+	function rotarImagen(){
+		
+	}
+
 }
 
  ?>

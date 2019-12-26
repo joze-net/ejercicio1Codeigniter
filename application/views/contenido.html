@@ -1,36 +1,42 @@
 
 
 
-<body>
+<body >
 
-<div class="container">
+<div class="container" style="float: right; width: 35%; margin-right: 2%;margin-top: 1%;border:1px solid black;overflow: scroll; height: 300px; ">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
+        <div class="post-preview" style="text-align: right; ">
          
            
             
    <!-- $res esta almacenada en la variable $data en la funcion de mostrar contenida en articulos,donde consulta a la db   -->       
-<?php if($res != null){
+<?php if($res != null){ ?>
 
-      foreach($res->result() as $fila){ ?><!--tener en cuente que result() es una funcion de codeigniter-->
+
+
+     <?php  foreach($res->result() as $fila){ ?><!--tener en cuente que result() es una funcion de codeigniter-->
 
           
-          <p class="post-meta">
+          <p  class="post-meta" >
 
                  <a href="http://localhost/pruebaCodeigniter/articulos/vercontenido?idpost=<?php echo $fila->id ?>"><button class="btn btn-link"><?php echo $fila->descripcion ?></button></a>
            
 
           
             
-            <br> <?php if($this->session->userdata('inicio') && $this->session->userdata('usuario')==$fila->usunombre ){echo  'Publicado por <strong>ti</strong>'; }else{ echo  'Publicado por <strong>' . $fila->usunombre. '</strong>';} ?>
+            <br> <?php if($this->session->userdata('inicio') && $this->session->userdata('usuario')==$fila->usunombre ){echo  'Publicado por <strong>ti</strong>'; }else  { echo  'Publicado por <strong>' . $fila->usunombre. '</strong>';} ?>
 
-            <br> <?php echo  'Fecha publicacion ' . $fila->fecha ?>
+            <br><span style="font-size: smaller;"> <?php echo  'Fecha publicacion ' . $fila->fecha ?></span>
               
              
             </p>
 
-          <?php }} ?>      
+          <?php }?>
+
+
+          <?php  } ?> 
+                
         </div>
        
         <!-- Pager -->
